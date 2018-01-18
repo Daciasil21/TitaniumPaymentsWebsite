@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="./slider/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+   <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/float-label-css/v1.0.2/dist/float-label.min.css"/>
+</head>
+
+<body>
+    
+    <div class = 'image'>
+      <img src="./logo.png">
+      </div>
+    <form>
+        <div class="container-fluid">
+            <form class = 'form-label form-js-label' id="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label class="has-float-label" >
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name" required/> <span>First Name</span> </label>    
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="has-float-label" >
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name" required/>
+                        <span>Last Name</span></label>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="has-float-label">
+                        <input type="tel" class="form-control" id="telNum" placeholder="Telephone Number" required>
+                        <span>Telephone Number<span></label>
+                        <div class="invalid-feedback">
+                            Please provide a valid telephone number.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="has-float-label">
+                        <input type="email" class="form-control" id="email" placeholder="user@gmail.com" required>
+                        <span>Email Address</span></label>
+                        <div class="invalid-feedback">
+                            Please provide a valid email.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="has-float-label">
+                        <input type="text" class="form-control" id="CurrentProv" placeholder="Current Provider">
+                        <span>Current Provider</span></label>
+                    </div>
+                    <div class="form-inline">
+                        <div class="form-group col-lg-12 selectDiv">
+                        
+                            <label class="has-float-label commerce"><span>Type of Commerce</span>
+                            <select  class = "form-control" id="sel1">
+                                <option value="jan">Retail</option>
+                                <option value="jan">E-Commerce</option>
+                                <option value="jan">Motor</option>
+                            </select>
+                            </label>
+                           
+                           <div class = 'mcc'>
+                            <label class="has-float-label">
+                            <span>MCC</span>
+                            <select class="form-control" id="sel2">
+                                <option value="">1</option>
+                                <option value="1">2</option>
+                                <option value="2">3</option>
+                                <option value="3">4</option>
+                            </select>
+                            </label>
+                            </div>
+                            <section>
+                            
+                                <div class="form-inline sliderDiv">
+                                <div class="firstslider form-inline">
+                                <label class = 'col-sm-6'>
+                                    Amount of Retail</label>
+                             <div class = 'col-sm-6 col-md-2'>
+                                <div id="slider"></div>
+                               </div>
+                               </div>
+                               <div class = "secondslider form-inline">
+                                <label>
+                                    Amount of e-commerce</label>
+                                    <div class = 'col-md-2'>
+                                <div id="slider2"></div>
+                                </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class = ".col-md-3 .offset-md-3">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+   </form>
+   <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+   <!--  slider -->
+    <script src="./slider/nouislider.min.js"></script>
+     <script src="./slider/wNumb.js"></script>
+  
+
+<script>
+        var slider = document.getElementById('slider');
+
+        noUiSlider.create(slider, {
+            start: 50,
+            connect: true,
+            tooltips: [ wNumb({ decimals: 0 })],
+            range: {
+                'min': 0,
+                'max': 100
+            }  
+        });
+
+               var slider2 = document.getElementById('slider2');
+
+        noUiSlider.create(slider2, {
+            start: 50,
+            connect: true,
+            tooltips: [ wNumb({ decimals: 0 })],
+            range: {
+                'min': 0,
+                'max': 100
+            }  
+        });
+
+        (function() {
+            'use strict';
+
+            window.addEventListener('load', function() {
+                var form = document.getElementById('needs-validation');
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            }, false);
+        })();
+</script>
+</body>
+
+</html>
