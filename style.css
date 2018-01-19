@@ -82,6 +82,8 @@ a {
       border-radius: 5px !important;
     }
 
+    .has-float-label select{
+    }
 
     button{
       background-color: #2980b9 !important;
@@ -93,35 +95,8 @@ a {
 
     .mcc, .commerce {
       margin-left: 20px;
-      width: 500px;
     }
-
-   /* #slidingDiv{
-  display:none
-  ;}*/
-
-  .mainselection select {
-   border: 0;
-   color: #bdc3c7;
-   
-   font-size: 20px;
-   font-weight: bold;
-   padding: 2px 10px;
-   width: 378px;
-   *width: 350px;
-   background-color: #2980b9;
-   background: linear-gradient(to left, rgba(255,0,0,0), rgb(52,152,219));
-;
-   -webkit-appearance: none;
-}
-
-.mainselection {
-   overflow:hidden;
-   margin:20px;
-   width:350px;
-   -moz-border-radius: 9px 9px 9px 9px;
-   -webkit-border-radius: 9px 9px 9px 9px;
-   border-radius: 9px 9px 9px 9px;
-   box-shadow: 1px 1px 11px #330033;
-   background: #2980b9 url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
-}
+/* dropdown display*/
+#slidingDiv{
+  display:none !important
+  ;}
